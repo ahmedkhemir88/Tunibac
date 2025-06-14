@@ -1,0 +1,143 @@
+/* STYLE GLOBAL */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../images/back.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+
+/* OVERLAY COMMUN */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENU PAGE INDEX */
+.content {
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  padding: 40px 20px;
+}
+.content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.content p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.cards a {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffc107;
+  color: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  width: 160px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.cards a span {
+  display: block;
+  margin-top: 8px;
+}
+.cards a:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* CONTENU DES FORMULAIRES (pages des filières) */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+}
+.container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+input, button {
+  width: 90%;
+  padding: 10px;
+  margin: 8px auto;
+  display: block;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+}
+input {
+  background-color: #ffffffcc;
+  color: black;
+}
+button {
+  background-color: #ffc107;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover {
+  background-color: white;
+}
+#resultat {
+  background: rgba(0,0,0,0.3);
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+
+@media (max-width: 600px) {
+  .content h1 { font-size: 24px; }
+  .cards a { font-size: 16px; padding: 15px; width: 90%; }
+  input, button { width: 95%; font-size: 14px; }
+  .container h1 { font-size: 22px; }
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup-box {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #888;
+}

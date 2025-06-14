@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Bac Sport</title>
+<link href="css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4B6YL15QGZ');
+</script>
+</head>
+<body>
+<div class="overlay">
+  <div class="container">
+    <h1>🧾 Bac Sport</h1>
+    <form id="form">
+      <input id="nom" placeholder="Votre nom" required type="text"/><br/>
+      <input id="math" placeholder="Math" required step="0.01" type="number"/><br/>
+      <input id="physique" placeholder="Physique" required step="0.01" type="number"/><br/>
+      <input id="sc_bio" placeholder="Sc Bio" required step="0.01" type="number"/><br/>
+      <input id="français" placeholder="Français" required step="0.01" type="number"/><br/>
+      <input id="philo" placeholder="Philo" required step="0.01" type="number"/><br/>
+      <input id="arabe" placeholder="Arabe" required step="0.01" type="number"/><br/>
+      <input id="sport_pratique" placeholder="Sport pratique" required step="0.01" type="number"/><br/>
+      <input id="sport_théorie" placeholder="Sport théorie" required step="0.01" type="number"/><br/>
+      <input id="éducation_physique" placeholder="Éducation Physique" required step="0.01" type="number"/><br/>
+      <input id="anglais" placeholder="Anglais" required step="0.01" type="number"/><br/>
+      <input id="option" placeholder="Option" required step="0.01" type="number"/><br/>
+      <button type="submit">Calculer</button>
+    </form>
+
+    <a href="index.html" style="display:inline-block;margin-top:30px;background:#555;padding:10px 20px;color:white;text-decoration:none;border-radius:6px;font-weight:bold;">⬅️ Retour à l'accueil</a>
+  </div>
+</div>
+
+<!-- 🪟 POPUP -->
+<div id="popup" class="popup-overlay" style="display:none;">
+  <div class="popup-box">
+    <span id="popup-close" class="close-btn">&times;</span>
+    <h2>🎓 Résultat</h2>
+    <p id="popup-msg"></p>
+  </div>
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const nom = document.getElementById("nom").value;
+  let total = 0, score = 0, bonus = 0;
+  let coefTotal = 14.5;
+  function val(id) {
+    return parseFloat(document.getElementById(id).value.replace(',', '.'));
+  }
+  total += val('math') * 1; score += val('math') * 0.5;
+  total += val('physique') * 1; score += val('physique') * 0.5;
+  total += val('sc_bio') * 3; score += val('sc_bio') * 1.5;
+  total += val('français') * 1.5; score += val('français') * 1;
+  total += val('philo') * 1.5;
+  total += val('arabe') * 1;
+  total += val('sport_pratique') * 2.5; score += val('sport_pratique') * 1.5;
+  total += val('sport_théorie') * 0.5; score += val('sport_théorie') * 0.5;
+  total += val('éducation_physique') * 1; score += val('éducation_physique') * 1;
+  total += val('anglais') * 1.5; score += val('anglais') * 1;
+  bonus = Math.max(0, val('option') - 10);
+
+  let moyenne = ((total + bonus) / coefTotal).toFixed(2);
+  let scoreFinal = (moyenne * 4 + score).toFixed(2);
+  let msg = nom + ", votre moyenne est : " + moyenne + "/20<br>";
+  msg += "🎯 Score d’orientation : " + scoreFinal;
+  msg += (moyenne >= 10) ? "<br>🎉 Admis Nchalah !" : "<br>Matkhafech Nchalah Rabi Ysahel.";
+
+  document.getElementById("popup-msg").innerHTML = msg;
+  document.getElementById("popup").style.display = "flex";
+});
+
+document.getElementById("popup-close").onclick = function() {
+  document.getElementById("popup").style.display = "none";
+};
+</script>
+
+<style>
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup-box {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #888;
+}
+</style>
+</body>
+</html>
