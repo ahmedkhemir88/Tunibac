@@ -40,8 +40,8 @@ Ce site peut être hébergé facilement sur :
 
 Développé avec ❤️ par [Ahmed Houssine Khemir]
 
-- GitHub : [github.com/ton-profil](https://github.com/ton-profil)
-- Contact : [ton.email@email.com](mailto:ton.email@email.com)
+- GitHub : [github.com/ahmedkhemir88](https://github.com/ahmedkhemir88)
+- Contact : [ahmedhoussine.khemir@esprit.tn](mailto:ahmedhoussine.khemir@esprit.tn)
 
 ---
 
