@@ -9,7 +9,6 @@ TuniBac est une application web simple, responsive et 100% dynamique permettant 
 - 💻 Interface intuitive et compatible mobile / PC
 - 🔢 Calcul automatique selon les coefficients officiels
 - 📊 Score d’orientation instantané avec bonus option
-- 🎯 Popup design pour afficher les résultats
 - 📁 Prend en charge **toutes les sections** :
   - Mathématiques
   - Sciences expérimentales
