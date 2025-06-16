@@ -1,4 +1,4 @@
-/* STYLE GLOBAL */
+/* === STYLE GLOBAL === */
 body, html {
   margin: 0;
   padding: 0;
@@ -8,8 +8,7 @@ body, html {
   color: white;
 }
 
-
-/* OVERLAY COMMUN */
+/* === ZONE D'OVERLAY === */
 .overlay {
   background-color: rgba(0, 0, 0, 0.8);
   min-height: 100vh;
@@ -19,7 +18,7 @@ body, html {
   justify-content: center;
 }
 
-/* CONTENU PAGE INDEX */
+/* === CONTENU ACCUEIL === */
 .content {
   text-align: center;
   color: white;
@@ -63,7 +62,7 @@ body, html {
   color: #000;
 }
 
-/* CONTENU DES FORMULAIRES (pages des filières) */
+/* === FORMULAIRES FILIÈRES === */
 .container {
   max-width: 600px;
   margin: auto;
@@ -105,14 +104,7 @@ button:hover {
   border-radius: 8px;
 }
 
-
-@media (max-width: 600px) {
-  .content h1 { font-size: 24px; }
-  .cards a { font-size: 16px; padding: 15px; width: 90%; }
-  input, button { width: 95%; font-size: 14px; }
-  .container h1 { font-size: 22px; }
-}
-
+/* === POPUP RESULTAT === */
 .popup-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -132,6 +124,7 @@ button:hover {
   max-width: 400px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  position: relative;
 }
 .close-btn {
   position: absolute;
@@ -140,4 +133,98 @@ button:hover {
   font-size: 28px;
   cursor: pointer;
   color: #888;
+}
+
+/* === CHATBOT FLOTANT === */
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffc107;
+  color: black;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  height: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  font-family: 'Segoe UI', sans-serif;
+}
+#chat-header {
+  background-color: #ffc107;
+  color: black;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+#chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  font-size: 14px;
+}
+#chat-input-area {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: white;
+}
+#chat-input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  padding: 10px;
+  font-size: 14px;
+  color: black;
+  background-color: #f9f9f9;
+}
+#chat-input:focus {
+  outline: none;
+}
+#send-btn {
+  background: #ffc107;
+  color: black;
+  border: none;
+  font-size: 16px;
+  padding: 8px 14px;
+  height: auto;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .content h1 { font-size: 24px; }
+  .cards a { font-size: 16px; padding: 15px; width: 90%; }
+  input, button { width: 95%; font-size: 14px; }
+  .container h1 { font-size: 22px; }
+  #chatbot {
+    width: 95%;
+    right: 10px;
+    height: 80%;
+  }
 }
